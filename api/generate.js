@@ -37,7 +37,13 @@ Rules:
 - Bubbles are relatable pain points with emoji
 - Proof cards use realistic UK names and specific £ or time results
 - Caption opens with a hook stat or story, ends with comment trigger CTA
-- DM includes 2-3 full AI prompts the user can copy into ChatGPT or Claude
+- DM is the complete message sent to followers who comment the trigger word
+- DM MUST start with exactly this block (preserve line breaks and emoji):
+"⚡ IMPORTANT — DO THIS FIRST\n\nFor these prompts to find REAL results with live prices you need web search turned on:\n\n✅ ChatGPT — tap the globe 🌐 icon before typing\n✅ Perplexity.ai — free app, searches live automatically (recommended)\n\nWithout web search the AI will guess. With it — it finds real results."
+- DM contains 2-3 full copy-paste AI prompts tailored to the topic
+- Every prompt that searches for deals, prices, products, jobs, properties or services MUST: (a) start with "Search the web right now and find me real [SPECIFIC THING]. Search [RELEVANT SITES]." — (b) include a "My details:" section with fill-in-the-blank fields in [square brackets] relevant to the topic — (c) end with "Only show me real results you have found. Do not guess or make anything up."
+- Choose RELEVANT SITES from this map based on the topic: Holiday/flights → TUI, Jet2, On the Beach, Love Holidays, Skyscanner | Staycation → Sykes Cottages, Airbnb, Cottages.com | Money/bills → MoneySavingExpert, Uswitch, Compare the Market | Jobs → Indeed, LinkedIn, Glassdoor, Reed | Shopping → Google Shopping, Amazon, PriceRunner | Health → NHS.uk | Benefits → GOV.UK, Turn2Us | Food → Google Maps, TripAdvisor | Events → Eventbrite, VisitBritain | Education → GOV.UK, Coursera | Legal/housing → Citizens Advice, Rightmove, Zoopla
+- DM MUST end with a 💡 BONUS TIP line telling the follower to open Perplexity.ai and paste a specific live-search query relevant to the topic
 - Everything is written for everyday UK families aged 25-45
 - solution items: e = emoji, t = step text
 - result items: e = emoji, t = title, s = subtitle
