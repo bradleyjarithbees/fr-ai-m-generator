@@ -9,6 +9,188 @@ import Slide6Outro from './components/Slide6Outro'
 const G = '#22C55E'
 const SLIDE_LABELS = ['Cover', 'Problem', 'Fix', 'Result', 'Proof', 'Outro']
 
+const QUICK_STARTS = [
+  {
+    label: '✈️ Holiday',
+    topic: 'how to find the best family holiday deals using AI',
+    trigger: 'HOLIDAY',
+    dm: `⚡ IMPORTANT — DO THIS FIRST
+
+For these prompts to find REAL results with live prices you need web search turned on:
+
+✅ ChatGPT — tap the globe 🌐 icon before typing
+✅ Perplexity.ai — free app, searches live automatically (recommended)
+
+Without web search the AI will guess. With it — it finds real results.
+
+---
+
+✈️ PROMPT 1 — Find a Family Holiday Deal
+
+Search the web right now and find me real family holiday packages available to book today. Search TUI, Jet2, On the Beach, Love Holidays and Skyscanner.
+
+My details:
+- Travelling from: [your nearest airport]
+- Month: [preferred month]
+- Duration: [e.g. 7 nights]
+- Budget: £[total budget] for [number of people]
+- Destination ideas: [e.g. Spain, Turkey, Greece]
+
+Only show me real results you have found. Do not guess or make anything up.
+
+---
+
+✈️ PROMPT 2 — Find the Cheapest Flights
+
+Search the web right now and find me real cheap flights available to book today. Search Skyscanner and Jet2.
+
+My details:
+- Travelling from: [your airport]
+- Destination: [where you want to go]
+- Dates: [flexible dates or exact]
+- Passengers: [number of adults + children ages]
+
+Only show me real results you have found. Do not guess or make anything up.
+
+---
+
+🏡 PROMPT 3 — Find a UK Staycation Break
+
+Search the web right now and find me real UK holiday cottages or breaks available to book. Search Sykes Cottages, Airbnb and Cottages.com.
+
+My details:
+- Location preference: [e.g. Lake District, Cornwall, Scotland]
+- Dates: [your dates]
+- Budget: £[total] for [number of nights]
+- Group size: [number of people]
+
+Only show me real results you have found. Do not guess or make anything up.
+
+---
+
+💡 BONUS TIP: Open Perplexity.ai and ask: "Find me the cheapest family holiday packages departing [your airport] in [your month] under £[budget] per person" — it searches live right now and shows you real prices.`,
+  },
+  {
+    label: '💰 Pay Rise',
+    topic: 'how to use AI to get a pay rise',
+    trigger: 'PAYRISE',
+    dm: `⚡ IMPORTANT — DO THIS FIRST
+
+For these prompts to find REAL results with live prices you need web search turned on:
+
+✅ ChatGPT — tap the globe 🌐 icon before typing
+✅ Perplexity.ai — free app, searches live automatically (recommended)
+
+Without web search the AI will guess. With it — it finds real results.
+
+---
+
+💰 PROMPT 1 — Find Out What You Should Be Earning
+
+Search the web right now and find me real current salary data for my job role. Search Indeed, LinkedIn and Glassdoor.
+
+My details:
+- Job title: [your exact job title]
+- Location: [your city or region]
+- Years of experience: [number]
+- Industry: [your industry]
+
+Only show me real results you have found. Do not guess or make anything up.
+
+---
+
+💰 PROMPT 2 — Find Higher Paying Jobs I Could Switch To
+
+Search the web right now and find me real job listings paying more than my current salary. Search Indeed, LinkedIn, Glassdoor and Reed.
+
+My details:
+- Current job title: [your title]
+- Current salary: £[your salary]
+- Location: [your city] or willing to commute [radius]
+- Key skills: [list your top skills]
+
+Only show me real results you have found. Do not guess or make anything up.
+
+---
+
+💰 PROMPT 3 — Write My Pay Rise Request
+
+Write me a professional pay rise request email to send to my manager. Use the market rate data I found above to support my case.
+
+My details:
+- Current role: [your role]
+- Current salary: £[your salary]
+- Time since last pay review: [e.g. 18 months]
+- My biggest wins this year: [list 3 achievements]
+- Market rate I found: £[figure from Prompt 1]
+
+---
+
+💡 BONUS TIP: Open Perplexity.ai and ask: "What is the average salary for a [your job title] in [your city] in 2025?" — it searches live job boards and gives you real figures to take into your negotiation.`,
+  },
+  {
+    label: '🎂 Birthday Party',
+    topic: 'how to plan the perfect birthday party using AI',
+    trigger: 'PARTY',
+    dm: `⚡ IMPORTANT — DO THIS FIRST
+
+For these prompts to find REAL results with live prices you need web search turned on:
+
+✅ ChatGPT — tap the globe 🌐 icon before typing
+✅ Perplexity.ai — free app, searches live automatically (recommended)
+
+Without web search the AI will guess. With it — it finds real results.
+
+---
+
+🎂 PROMPT 1 — Find Party Venues Near Me
+
+Search the web right now and find me real birthday party venues available to book. Search Google Maps and Eventbrite.
+
+My details:
+- Location: [your town or city]
+- Party date: [your date]
+- Number of guests: [number]
+- Age of birthday person: [age]
+- Budget for venue: £[budget]
+
+Only show me real results you have found. Do not guess or make anything up.
+
+---
+
+🎂 PROMPT 2 — Find Party Food and Cake Deals
+
+Search the web right now and find me real deals on party food and birthday cakes available now. Search Google Shopping, Amazon and bakeries on Google Maps.
+
+My details:
+- Number of guests: [number]
+- Dietary needs: [any allergies or requirements]
+- Food budget: £[budget]
+- Cake theme or flavour: [your choice]
+
+Only show me real results you have found. Do not guess or make anything up.
+
+---
+
+🎂 PROMPT 3 — Plan the Whole Party on a Budget
+
+Create me a complete birthday party plan with a full budget breakdown, shopping list and timeline.
+
+My details:
+- Total budget: £[budget]
+- Number of guests: [number]
+- Age group: [children / adults / mixed]
+- Theme: [your theme or "help me choose"]
+- Venue preference: [home / hired venue / outdoor]
+
+Include money-saving tips to cut costs without cutting corners.
+
+---
+
+💡 BONUS TIP: Open Perplexity.ai and ask: "What are the best budget birthday party ideas for a [age] year old in [your location] in 2025?" — it finds real local venues and the latest ideas right now.`,
+  },
+]
+
 function SlideWrapper({ children, index, slideRef }) {
   return (
     <div
@@ -29,6 +211,7 @@ export default function App() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const [slides, setSlides] = useState(null)
+  const [quickStartDM, setQuickStartDM] = useState('')
   const [coverPhoto, setCoverPhoto] = useState(null)
   const [activeSlide, setActiveSlide] = useState(0)
   const [downloading, setDownloading] = useState(false)
@@ -42,6 +225,7 @@ export default function App() {
     setLoading(true)
     setError('')
     setSlides(null)
+    setQuickStartDM('')
     try {
       const res = await fetch('/api/generate', {
         method: 'POST',
@@ -166,6 +350,25 @@ export default function App() {
             Generate Carousel
           </div>
 
+          {/* Quick-start buttons */}
+          <div style={{ display: 'flex', gap: 10, marginBottom: 24, flexWrap: 'wrap' }}>
+            {QUICK_STARTS.map((qs) => (
+              <button
+                key={qs.trigger}
+                onClick={() => { setTopic(qs.topic); setTrigger(qs.trigger); setQuickStartDM(qs.dm) }}
+                style={{
+                  background: 'rgba(34,197,94,0.1)', border: '1px solid rgba(34,197,94,0.3)',
+                  borderRadius: 10, padding: '10px 20px', color: G,
+                  fontFamily: "'Space Mono', monospace", fontSize: 13,
+                  fontWeight: 700, cursor: 'pointer', letterSpacing: 1,
+                  transition: 'all 0.15s',
+                }}
+              >
+                {qs.label}
+              </button>
+            ))}
+          </div>
+
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16, marginBottom: 24 }}>
             <div>
               <label style={{ fontSize: 12, color: 'rgba(255,255,255,0.4)', letterSpacing: 2, display: 'block', marginBottom: 8 }}>
@@ -225,6 +428,36 @@ export default function App() {
             </div>
           )}
         </div>
+
+        {/* Quick-start DM preview — shown immediately on button click, before generating */}
+        {quickStartDM && !slides && (
+          <div style={{
+            background: '#0a1a0e', border: '1px solid #0d2010',
+            borderRadius: 20, padding: '28px', marginBottom: 40,
+          }}>
+            <div style={{ fontSize: 12, color: G, letterSpacing: 3, marginBottom: 16, textTransform: 'uppercase' }}>
+              DM Script + AI Prompts
+            </div>
+            <div style={{
+              fontSize: 14, color: 'rgba(255,255,255,0.7)',
+              lineHeight: 1.8, whiteSpace: 'pre-wrap',
+            }}>
+              {quickStartDM}
+            </div>
+            <button
+              onClick={() => navigator.clipboard.writeText(quickStartDM)}
+              style={{
+                marginTop: 16, background: 'rgba(34,197,94,0.1)',
+                border: '1px solid rgba(34,197,94,0.3)', borderRadius: 8,
+                padding: '8px 18px', color: G,
+                fontFamily: "'Space Mono', monospace", fontSize: 12,
+                cursor: 'pointer', letterSpacing: 1,
+              }}
+            >
+              COPY DM SCRIPT
+            </button>
+          </div>
+        )}
 
         {slides && (
           <>
