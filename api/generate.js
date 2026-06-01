@@ -1,20 +1,15 @@
-export const config = { runtime: 'edge' }
+export const maxDuration = 60
 
-export default async function handler(req) {
+export default async function handler(req, res) {
   if (req.method !== 'POST') {
-    return new Response(JSON.stringify({ error: 'Method not allowed' }), { status: 405 })
+    return res.status(405).json({ error: 'Method not allowed' })
   }
 
-  let body
-  try {
-    body = await req.json()
-  } catch {
-    return new Response(JSON.stringify({ error: 'Invalid JSON' }), { status: 400 })
-  }
+  const body = typeof req.body === 'string' ? JSON.parse(req.body) : req.body
+  const { topic, trigger } = body || {}
 
-  const { topic, trigger } = body
   if (!topic || !trigger) {
-    return new Response(JSON.stringify({ error: 'Missing topic or trigger' }), { status: 400 })
+    return res.status(400).json({ error: 'Missing topic or trigger' })
   }
 
   const prompt = `You are a social media content creator for @fr_ai_m, an Instagram page that teaches everyday families how to use AI. Generate a 6-slide Instagram carousel for the topic: ${topic}. The comment trigger word is: ${trigger}.
@@ -66,7 +61,7 @@ Rules:
 
     if (!response.ok) {
       const err = await response.text()
-      return new Response(JSON.stringify({ error: 'Anthropic API error', detail: err }), { status: 502 })
+      return res.status(502).json({ error: 'Anthropic API error', detail: err })
     }
 
     const data = await response.json()
@@ -80,15 +75,12 @@ Rules:
       if (match) {
         parsed = JSON.parse(match[0])
       } else {
-        return new Response(JSON.stringify({ error: 'Failed to parse AI response', raw: text }), { status: 500 })
+        return res.status(500).json({ error: 'Failed to parse AI response', raw: text })
       }
     }
 
-    return new Response(JSON.stringify(parsed), {
-      status: 200,
-      headers: { 'Content-Type': 'application/json' },
-    })
+    return res.status(200).json(parsed)
   } catch (err) {
-    return new Response(JSON.stringify({ error: err.message }), { status: 500 })
+    return res.status(500).json({ error: err.message })
   }
 }
