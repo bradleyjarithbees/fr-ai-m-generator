@@ -232,7 +232,9 @@ export default function App() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ topic: topic.trim(), trigger: trigger.trim() }),
       })
-      const data = await res.json()
+      const text = await res.text()
+      let data
+      try { data = JSON.parse(text) } catch { throw new Error(text.slice(0, 300) || 'Server error — check Vercel logs') }
       if (!res.ok) throw new Error(data.error || 'Generation failed')
       setSlides(data)
       setActiveSlide(0)
